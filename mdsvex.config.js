@@ -3,6 +3,10 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeExternalLinks from 'rehype-external-links'
 
+import rehypeKatexSvelte from "rehype-katex-svelte";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
 // urara remark plugins
 import { parse, join } from 'node:path'
 import { visit } from 'unist-util-visit'
@@ -18,27 +22,27 @@ import { renderCodeToHTML, runTwoSlash, createShikiHighlighter } from 'shiki-two
 
 const remarkUraraFm =
   () =>
-  (tree, { data, filename }) => {
-    const filepath = filename ? filename.split('/src/routes')[1] : 'unknown'
-    const { dir, name } = parse(filepath)
-    if (!data.fm) data.fm = {}
-    // Generate slug & path
-    data.fm.slug = filepath
-    data.fm.path = join(dir, `/${name}`.replace('/+page', '').replace('.svelte', ''))
-    // Generate ToC
-    if (data.fm.toc !== false) {
-      const [slugs, toc] = [new Slugger(), []]
-      visit(tree, 'heading', node => {
-        toc.push({
-          depth: node.depth,
-          title: toString(node),
-          slug: slugs.slug(toString(node), false)
+    (tree, { data, filename }) => {
+      const filepath = filename ? filename.split('/src/routes')[1] : 'unknown'
+      const { dir, name } = parse(filepath)
+      if (!data.fm) data.fm = {}
+      // Generate slug & path
+      data.fm.slug = filepath
+      data.fm.path = join(dir, `/${name}`.replace('/+page', '').replace('.svelte', ''))
+      // Generate ToC
+      if (data.fm.toc !== false) {
+        const [slugs, toc] = [new Slugger(), []]
+        visit(tree, 'heading', node => {
+          toc.push({
+            depth: node.depth,
+            title: toString(node),
+            slug: slugs.slug(toString(node), false)
+          })
         })
-      })
-      if (toc.length > 0) data.fm.toc = toc
-      else data.fm.toc = false
+        if (toc.length > 0) data.fm.toc = toc
+        else data.fm.toc = false
+      }
     }
-  }
 
 // Better type definitions needed
 const remarkUraraSpoiler = () => tree =>
@@ -101,12 +105,14 @@ export default {
         }
       }
     ],
+    remarkMath,
     remarkUraraFm,
     remarkUraraSpoiler,
     [remarkFootnotes, { inlineNotes: true }]
   ],
   rehypePlugins: [
     rehypeSlug,
+    rehypeKatexSvelte,
     [rehypeAutolinkHeadings, { behavior: 'wrap' }],
     [
       rehypeExternalLinks,
@@ -115,5 +121,14 @@ export default {
         target: '_blank'
       }
     ]
-  ]
+  ],
+  // stylesheets: [
+  //   {
+  //     href: 'katex.min.css',
+  //     type: 'text/css',
+  //     integrity:
+  //       'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+  //     crossorigin: 'anonymous',
+  //   },
+  // ],
 }

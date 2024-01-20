@@ -7,6 +7,7 @@ import { mdsvex } from 'mdsvex'
 import mdsvexConfig from './mdsvex.config.js'
 import { vitePreprocess } from '@sveltejs/kit/vite'
 
+
 const adapter = {
   auto: adapterAuto(),
   node: adapterNode(),
@@ -22,7 +23,7 @@ export default {
   extensions: ['.svelte', ...mdsvexConfig.extensions],
   preprocess: [mdsvex(mdsvexConfig), vitePreprocess()],
   kit: {
-    adapter: 
+    adapter:
       process.env.ADAPTER
         ? adapter[process.env.ADAPTER.toLowerCase()]
         : Object.keys(process.env).some(key => ['VERCEL', 'CF_PAGES', 'NETLIFY', 'GITHUB_ACTION_REPOSITORY', 'SST'].includes(key))
