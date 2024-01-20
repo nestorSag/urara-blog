@@ -11,17 +11,17 @@ export const favicon: Icon = {
 
 export const any: { [key: number]: Icon } = {
   180: {
-    src: '/assets/icon@180.png',
+    src: '/assets/any@180.png',
     sizes: '180x180',
     type: 'image/png'
   },
   192: {
-    src: '/assets/icon@192.png',
+    src: '/assets/any@192.png',
     sizes: '192x192',
     type: 'image/png'
   },
   512: {
-    src: '/assets/icon@512.png',
+    src: '/assets/any@512.png',
     sizes: '512x512',
     type: 'image/png'
   }
@@ -29,12 +29,12 @@ export const any: { [key: number]: Icon } = {
 
 export const maskable: { [key: number]: Icon } = {
   192: {
-    src: '/assets/icon@192.png',
+    src: '/assets/any@192.png',
     sizes: '192x192',
     type: 'image/png'
   },
   512: {
-    src: '/assets/icon@512.png',
+    src: '/assets/any@512.png',
     sizes: '512x512',
     type: 'image/png'
   }

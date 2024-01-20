@@ -10,9 +10,11 @@ edited: 2024-01-20
 
 <!-- !["Profile picture"](/about/images/rounded-profile.png) -->
 
-I'm Nestor Sanchez, a Data Scientist and Software Engineer living in Edinburgh, UK. I started working in this area in 2015, and since then I have helped companies in Manufacturing, Education, Telecom, Energy and Marketing to turn their data into insights and products. 
+I'm Nestor Sanchez, a Data Scientist and Software Engineer based in Edinburgh, UK. 
 
-I would describe myself as a generalist, and have experience across the entire spectrum of data science, from working with cloud infrastructure to writing scientific publications.
+I started working on this topic in 2015, and since then I have helped companies in Manufacturing, Education, Telecom, Energy and Marketing to turn their data into insights and products. 
+
+I would describe myself as a generalist, having a broad spectrum of skills from working with cloud infrastructure to writing scientific publications.
 
 My academic background includes a PhD in Statistics and an MSc in High Performance Computing, both by the University of Edinburgh.
 
