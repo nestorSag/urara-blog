@@ -55,7 +55,7 @@ Here are some of the generated names I liked the most for England
 
 As a non-native speaker I have to admit I wouldn't bat an eye if I saw any of those on a road sign (Perhap's Miller's Mill would raise some suspicion), which somehow makes it more amusing.
 
-This little experiment can be re-run for any other country or subregion with barely any change in command line parameters too, so I also had a chuckle doing this for Mexican towns. Some of the best ones:
+This little experiment can be re-run for any other country or subregion with barely any change in command line parameters, so I also had a chuckle doing this for Mexican towns. Some of the best ones:
 
 * San Juan Guilalapam
 * El Malo
