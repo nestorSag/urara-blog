@@ -76,11 +76,11 @@ jobs:
       - name: Build
         run: ${{ inputs.build_command }}
 
-      - name: Test step
-        run: mkdir build_ && cp build/* build_/
-
       - name: Test
         run: echo "$(ls -l .)""
+
+      # - name: Test step
+      # run: mkdir build_ && cp build/* build_/
 
       # - name: Deploy
       #   uses: peaceiris/actions-gh-pages@v3
