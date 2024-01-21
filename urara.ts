@@ -49,8 +49,7 @@ const cpFile = (src: string, { stat = 'copy', dest = path.join(check(path.parse(
       .catch(error)
     : fs
       .copyFile(src, dest)
-      .then(() => log('green', `${stat} file`, dest))
-      .then(() => log('orange', `${stat} FULL PATH`, path.resolve(dest)))
+      .then(() => log('green', `${stat} FULL PATH`, path.resolve(dest)))
       .catch(error)
 
 const rmFile = (src: string, { dest = path.join(check(path.parse(src).ext.slice(1)), src.slice(6)) } = {}) =>
