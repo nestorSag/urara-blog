@@ -77,7 +77,7 @@ jobs:
         run: ${{ inputs.build_command }}
 
       - name: Test
-        run: echo "$(ls -l .)""
+        run: echo "$(ls -l .)"
 
       # - name: Test step
       # run: mkdir build_ && cp build/* build_/
