@@ -22,18 +22,18 @@ const check = (ext: string) => (config.extensions.posts.includes(ext) ? 'src/rou
 const log = (color: string, msg: string, dest?: string | Error) =>
   console.log(
     chalk.dim(new Date().toLocaleTimeString() + ' ') +
-      chalk.magentaBright.bold('[urara] ') +
-      chalk[color](msg + ' ') +
-      chalk.dim(dest ?? '')
+    chalk.magentaBright.bold('[urara] ') +
+    chalk[color](msg + ' ') +
+    chalk.dim(dest ?? '')
   )
 
 const error = (err: { code: string; message: unknown }) => {
   if (config.catch.includes(err.code)) {
     console.log(
       chalk.dim(new Date().toLocaleTimeString() + ' ') +
-        chalk.redBright.bold('[urara] ') +
-        chalk.red('error ') +
-        chalk.dim(err.message)
+      chalk.redBright.bold('[urara] ') +
+      chalk.red('error ') +
+      chalk.dim(err.message)
     )
   } else {
     throw err
@@ -43,26 +43,26 @@ const error = (err: { code: string; message: unknown }) => {
 const cpFile = (src: string, { stat = 'copy', dest = path.join(check(path.parse(src).ext.slice(1)), src.slice(6)) } = {}) =>
   config.extensions.images.includes(path.parse(src).ext.slice(1))
     ? fs
-        .copyFile(src, path.join('src/static', src.slice(6)))
-        .then(() => fs.copyFile(src, path.join('static', src.slice(6))))
-        .then(() => log('green', `${stat} file`, dest))
-        .catch(error)
+      .copyFile(src, path.join('src/static', src.slice(6)))
+      .then(() => fs.copyFile(src, path.join('static', src.slice(6))))
+      .then(() => log('green', `${stat} file`, dest))
+      .catch(error)
     : fs
-        .copyFile(src, dest)
-        .then(() => log('green', `${stat} file`, dest))
-        .catch(error)
+      .copyFile(src, dest)
+      .then(() => log('green', `${stat} file`, dest))
+      .catch(error)
 
 const rmFile = (src: string, { dest = path.join(check(path.parse(src).ext.slice(1)), src.slice(6)) } = {}) =>
   config.extensions.images.includes(path.parse(src).ext.slice(1))
     ? fs
-        .rm(path.join('src/static', src.slice(6)))
-        .then(() => fs.rm(path.join('static', src.slice(6))))
-        .then(() => log('yellow', 'remove file', dest))
-        .catch(error)
+      .rm(path.join('src/static', src.slice(6)))
+      .then(() => fs.rm(path.join('static', src.slice(6))))
+      .then(() => log('yellow', 'remove file', dest))
+      .catch(error)
     : fs
-        .rm(dest)
-        .then(() => log('yellow', 'remove file', dest))
-        .catch(error)
+      .rm(dest)
+      .then(() => log('yellow', 'remove file', dest))
+      .catch(error)
 
 const cpDir = (src: string) =>
   fs.readdir(src, { withFileTypes: true }).then(files =>
@@ -122,9 +122,7 @@ const build = () => {
 }
 
 const clean = () => {
-  cleanDir('urara')
-  rmDir('static', { dest: ['static'] })
-  rmDir('src/static', { dest: ['src/static'] })
+
 }
 
 switch (process.argv[2]) {
