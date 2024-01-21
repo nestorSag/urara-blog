@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    uses: importantimport/.github/.github/workflows/pnpm-gh-pages.yml@main
+    uses: nestorSag/urara-blog/.github/workflows/deploy.yml@main
     permissions:
       contents: write
     with:

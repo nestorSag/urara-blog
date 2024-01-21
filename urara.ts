@@ -122,7 +122,9 @@ const build = () => {
 }
 
 const clean = () => {
-
+  cleanDir('urara')
+  rmDir('static', { dest: ['static'] })
+  rmDir('src/static', { dest: ['src/static'] })
 }
 
 switch (process.argv[2]) {
