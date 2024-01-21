@@ -14,8 +14,6 @@ I'm Nestor Sanchez, a Data Scientist and Software Engineer based in Edinburgh, U
 
 I started working on this field in 2015, and since then I have helped companies in Manufacturing, Education, Telecom, Energy and Marketing to turn their data into insights and products. 
 
-I would describe myself as a generalist, having a skill set that goes from scientific research to cloud computing.
-
 My academic background includes a PhD in Statistics and an MSc in High Performance Computing, both by the University of Edinburgh.
 
 My main areas of interests are applications of Machine Learning in renewable energy and applications of NLP in the legal domain.
