@@ -6,7 +6,7 @@ edited: 2024-01-20
 ---
 
 
-<img src="/about/images/rounded-profile.png" alt="drawing" style="width: 30%; display: block; margin-left: auto; margin-right: auto;"/>
+<img src="/about/images/profile.jpeg" alt="drawing" style="width: 30%; display: block; margin-left: auto; margin-right: auto; clip-path: circle();"/>
 
 <!-- !["Profile picture"](/about/images/rounded-profile.png) -->
 

@@ -8,7 +8,7 @@ export const site: SiteConfig = {
   lang: 'en-US',
   description: 'Powered by SvelteKit/Urara',
   author: {
-    avatar: '/assets/rounded-profile.png',
+    avatar: '/assets/profile.jpeg',
     name: 'Nestor Sanchez',
     status: '🧑‍💻',
     bio: 'Stats PhD, Software Engineer\n Edinburgh, UK'
