@@ -74,17 +74,13 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build
+        env:
+          ADAPTER: static
         run: ${{ inputs.build_command }}
 
-      - name: Test
-        run: echo "$(ls -l .)"
-
-      # - name: Test step
-      # run: mkdir build_ && cp build/* build_/
-
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ${{ inputs.publish_dir }}
-      #     cname: ${{ inputs.cname }}
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ inputs.publish_dir }}
+          cname: ${{ inputs.cname }}
