@@ -1,14 +1,14 @@
-name: Deploy to GitHub Pages
+# name: Deploy to GitHub Pages
 
-on:
-  push:
-    branches: main
-  workflow_dispatch:
+# on:
+#   push:
+#     branches: main
+#   workflow_dispatch:
 
-jobs:
-  deploy:
-    uses: nestorSag/urara-blog/.github/workflows/deploy.yml@main
-    permissions:
-      contents: write
-    with:
-      publish_dir: build
+# jobs:
+#   deploy:
+#     uses: nestorSag/urara-blog/.github/workflows/deploy.yml@main
+#     permissions:
+#       contents: write
+#     with:
+#       publish_dir: build
